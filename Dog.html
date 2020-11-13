@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <style type="text/css">
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .question {
+            width: 500px;
+            height: 200px;
+            display: block;
+            background: radial-gradient(#3F4E5A, #011627);
+            font-size: 25px;
+            color: white;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .answers {
+            width: 500px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .answer {
+            margin: 10px;
+            width: 200px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .answer.yes {
+            background-color: #16985A;
+        }
+
+        .answer.no {
+            background-color: #E35347;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="troller">
+        <div class="question">
+            <span>Em còn giận anh không! 💕 </span> </div> <div class="answers">
+                    <div class="answer yes" onclick="troll(this)" onmouseover="troll(this)">Có</div>
+                    <div class="answer no" onclick="troll(this)" onmouseover="troll(this)">Không</div>
+        </div>
+    </div>
+
+    <script>
+        let count = 0;
+        function troll(answer) {
+            let answers = document.getElementsByClassName('answer');
+            if (count >= 5) {
+                for (let answer of answers) {
+                    answer.style.display = 'none';
+                }
+                alert('Đừng chọn nữa, anh biết em sẽ không giận anh nữa mà 💕))');
+            }
+            if (answer.innerText.toLowerCase() == 'có') {
+                for (let answer of answers) {
+                    if (answer.classList.contains('yes')) {
+                        answer.innerText = 'Có';
+                        answer.classList.add('no')
+                        answer.classList.remove('yes');
+                    } else if (answer.classList.contains('no')) {
+                        answer.innerText = 'Không';
+                        answer.classList.add('yes')
+                        answer.classList.remove('no');
+                    }
+                }
+                count++;
+            } else {
+                alert('Anh yêu em!!!');
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>
