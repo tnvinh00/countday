@@ -1,4 +1,4 @@
-const yourDate = new Date("2018-11-14T23:40:10"),
+const yourDate = new Date("2018-11-14T00:00:00"),
 music = ['noinaycoanh', 'nguoiamphu'];
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', function(){
       function olock() {
             var today = new Date(),
             day = Math.floor( Math.floor( Math.floor((new Date() - yourDate) / 1000) / 60 / 60 / 24));
-            if (day < 730)
-                  year = 1;
-            else
+            if (day < 1096)
                   year = 2;
+            else
+                  year = 3;
             hrs = (Math.floor( Math.floor((today - yourDate) / 1000) / 60 / 60)) % 24,
             min = (Math.floor( Math.floor((today - yourDate) / 1000) / 60)) % 60,
             sec =  Math.floor((today - yourDate) / 1000) % 60;
